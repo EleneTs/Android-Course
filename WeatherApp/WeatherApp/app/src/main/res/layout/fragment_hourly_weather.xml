@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+tools:background="@color/black"
+android:layout_height="match_parent"
+tools:context=".HourlyWeather">
+
+
+    <ImageView
+        android:id="@+id/georgia_flag"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/dp50"
+        android:layout_marginTop="@dimen/dp16"
+        android:src="@drawable/georgia"
+        app:layout_constraintEnd_toStartOf="@+id/uk_flag"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/uk_flag"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/dp50"
+        android:layout_marginTop="@dimen/dp16"
+        android:src="@drawable/uk"
+        app:layout_constraintEnd_toStartOf="@+id/jamaica_flag"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/georgia_flag"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/jamaica_flag"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/dp50"
+        android:layout_marginTop="@dimen/dp16"
+        android:src="@drawable/jamaica"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/uk_flag"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hourly_city_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp32"
+        android:text="City Name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/base_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uk_flag" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hourly_weather_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hourly_city_name"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

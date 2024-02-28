@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Weather App</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="deg">°</string>
+    <string name="per">%</string>
+    <string name="api_key">1e9ad4416df53f1c70f42b44e0184798</string>
+    <string name="metric">metric</string>
+    <string name="base_url">https://api.openweathermap.org/data/2.5/</string>
+    <string name="icon_url">https://openweathermap.org/img/wn/</string>
+    <string name="png">\@2x.png</string>
+    <string name="tbilisi">Tbilisi</string>
+    <string name="london">London</string>
+    <string name="kingston">Kingston</string>
+
+</resources>
