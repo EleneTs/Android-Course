@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".secondPage.OneTodoActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/distance_standard"
+        android:background="@drawable/ic_back"
+        android:onClick="backButtonAction"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <ImageButton
+        android:id="@+id/pinButton"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:background="@drawable/ic_pin"
+        android:onClick="pinButtonAction"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        android:layout_marginEnd="@dimen/distance_standard"
+        />
+
+    <EditText
+        android:id="@+id/todoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:layout_marginStart="@dimen/distance_standard"
+        android:layout_marginTop="@dimen/distance_standard"
+        android:textSize="@dimen/text_size_big"
+        android:background="@color/white"
+        android:hint="@string/type_name_here"
+        android:inputType="textPersonName"
+        />
+
+    <ScrollView
+        android:layout_width="@dimen/size_zero"
+        android:layout_height="@dimen/size_zero"
+        app:layout_constraintTop_toBottomOf="@+id/todoTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/subtasks"
+                android:layout_width="@dimen/size_zero"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/distance_standard"
+                android:layout_marginEnd="@dimen/distance_standard"
+                android:layout_marginTop="@dimen/distance_standard"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:id="@+id/plusSign"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                app:tint="@color/grey"
+                android:clickable="true"
+                android:onClick="addSubtaskAction"
+                android:layout_marginStart="@dimen/distance_standard"
+                android:layout_marginTop="@dimen/distance_standard"
+                android:src="@drawable/ic_add"
+                android:focusable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/subtasks"/>
+
+            <TextView
+                android:id="@+id/addItemText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/distance_small"
+                android:text="Add Item"
+                android:clickable="true"
+                android:textColor="@color/grey"
+                android:onClick="addSubtaskAction"
+                android:focusable="true"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintBottom_toBottomOf="@+id/plusSign"
+                app:layout_constraintStart_toEndOf="@+id/plusSign"
+                app:layout_constraintTop_toTopOf="@+id/plusSign"/>
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginStart="@dimen/distance_standard"
+                android:layout_marginTop="@dimen/distance_standard"
+                android:layout_marginEnd="@dimen/distance_standard"
+                android:background="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addItemText" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/checkedSubtasks"
+                android:layout_width="@dimen/size_zero"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/distance_small"
+                android:layout_marginStart="@dimen/distance_standard"
+                android:layout_marginEnd="@dimen/distance_standard"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

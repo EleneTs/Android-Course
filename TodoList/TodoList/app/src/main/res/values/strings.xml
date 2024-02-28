@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Todo List</string>
+    <string name="search_your_notes">Search your notes</string>
+    <string name="other">OTHER</string>
+    <string name="add">Add</string>
+    <string name="type_name_here">Type name Here</string>
+</resources>
